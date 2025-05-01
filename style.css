@@ -127,6 +127,7 @@ button:active {
 }
 
 .modal-content h2 {
+    text-transform: capitalize;
     margin-top: 0;
     font-size: 2rem;
     color: #00c6ff;
