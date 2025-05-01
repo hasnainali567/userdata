@@ -1,0 +1,128 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #fdfbfb, #ebedee);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid #9c9c9c;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    background: #ffffff;
+    color: #444;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-color: #7f8c8d;
+}
+
+h1 {
+    margin: 0 0 30px;
+    font-size: 3.5rem;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 15px 25px;
+    border-radius: 12px;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.2),
+        0 6px 20px rgba(0, 0, 0, 0.19),
+        inset 0 -3px 5px rgba(255, 255, 255, 0.2);
+        text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.3);
+        transform: perspective(600px) rotateX(2deg);
+        animation: float 3s ease-in-out infinite;
+    }
+    
+    /* Animation for alive 3D feel */
+    @keyframes float {
+        0%, 100% {
+        transform: perspective(600px) rotateX(2deg) translateY(0px);
+    }
+    50% {
+        transform: perspective(600px) rotateX(2deg) translateY(-10px);
+    }
+}
+
+
+
+button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.2),
+    inset 0 -3px 6px rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+    0 6px 10px rgba(0, 0, 0, 0.25),
+    inset 0 -3px 8px rgba(255, 255, 255, 0.3);
+}
+
+button:active {
+    transform: scale(0.97);
+    box-shadow: 
+        0 3px 5px rgba(0, 0, 0, 0.2),
+        inset 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+@media screen and (max-width: 475px) {
+    h1{
+        font-size: 2.2rem;
+        word-wrap: nowrap !important;
+    }
+    
+    .card{
+        font-size: 1.2rem;
+        padding: 5px 10px;
+    }
+    
+    button {
+        font-size: .9rem;
+        margin-top: 3px;
+    }
+    
+}
+
+
+@media screen and (max-width: 335px) {
+    h1{
+        font-size: 1.7rem;
+    }
+
+    .card{
+        font-size: .95rem;
+    }
+
+    button {
+        font-size: .8rem;
+        padding: 8px 12px;
+    }
+}
