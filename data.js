@@ -173,12 +173,14 @@ let usersData = [
 
 
 let main = document.getElementById('main');
-let detail = document
+let detail = document.getElementById('details');
+
 
 for (let i = 0; i < usersData.length; i++) {
   let card = document.createElement('div');
   card.id = usersData[i].id;
   card.classList.add('card');
+  card.setAttribute('style', `--i: ${usersData[i].id}`)
 
   let btn = document.createElement('button');
 
@@ -186,8 +188,6 @@ for (let i = 0; i < usersData.length; i++) {
   btn.setAttribute('onClick', `showDetails(${usersData[i].id})`)
   btn.setAttribute('class', 'btn')
   
-  console.log(btn);
-  console.log(card);
   
   
   let { name } = usersData[i];
@@ -203,8 +203,35 @@ for (let i = 0; i < usersData.length; i++) {
 }
 
 
+function showDetails(userId) {
+  const user = usersData.find(user => user.id === userId);
+  const { name, email, phone, username, address } = user;
 
-function showDetails(id) {
-  console.log(id);
+  const modal = document.getElementById('detailsModal');
+  const modalContent = document.getElementById('modalContent');
+
+  modal.classList.add('active');
+  modalContent.textContent = 'Loading...';
+
+  const delay = Math.floor(Math.random() * 500 + 500); 
+
+  console.log(delay);
   
+
+  setTimeout(() => {
+    const modalHTML = `
+      <h2>${name.firstname} ${name.lastname}</h2>
+      <p><strong>Username:</strong> ${username}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Address:</strong> ${address.number}, ${address.street}, ${address.city}</p>
+      <p><strong>Zipcode:</strong> ${address.zipcode}</p>
+    `;
+    modalContent.innerHTML = modalHTML;
+  }, delay);
+}
+
+
+function closeModal() {
+  document.getElementById('detailsModal').classList.remove('active');
 }

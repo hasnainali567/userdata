@@ -8,13 +8,19 @@
     <script src="https://kit.fontawesome.com/ae99efb87b.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    
     <h1><i class="fa fa-user" aria-hidden="true"></i> User Data</h1>
     <div id="main"></div>
 
 
-    <div id="details">
-        
-    </div>
+    <div class="modal" id="detailsModal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeModal()"><i class="fas fa-xmark    "></i></span>
+          <h2>User Details</h2>
+          <p id="modalContent">Loading...</p>
+        </div>
+      </div>
+      
     <script src="data.js"></script>
 </body>
 </html>
